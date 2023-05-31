@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hangman</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+<body>
+    <h1>Hangman Game</h1>
+    <div id="word-display">{{ word_display }}</div>
+    <div id="chances">Chances remaining: {{ chances }}</div>
+    <form method="POST" action="/">
+        <input type="text" name="letter" maxlength="1" autocomplete="off" required>
+        <button type="submit">Guess</button>
+    </form>
+    <a href="/reset">Reset</a>
+</body>
+</html>
