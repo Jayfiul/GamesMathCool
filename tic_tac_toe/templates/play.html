@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <p>Current Player: {{ current_player }}</p>
+
+    <table>
+        <tr>
+            <td><a href="/play" onclick="makeMove(0)">{{ board[0] }}</a></td>
+            <td><a href="/play" onclick="makeMove(1)">{{ board[1] }}</a></td>
+            <td><a href="/play" onclick="makeMove(2)">{{ board[2] }}</a></td>
+        </tr>
+        <tr>
+            <td><a href="/play" onclick="makeMove(3)">{{ board[3] }}</a></td>
+            <td><a href="/play" onclick="makeMove(4)">{{ board[4] }}</a></td>
+            <td><a href="/play" onclick="makeMove(5)">{{ board[5] }}</a></td>
+        </tr>
+        <tr>
+            <td><a href="/play" onclick="makeMove(6)">{{ board[6] }}</a></td>
+            <td><a href="/play" onclick="makeMove(7)">{{ board[7] }}</a></td>
+            <td><a href="/play" onclick="makeMove(8)">{{ board[8] }}</a></td>
+        </tr>
+    </table>
+
+    {% if game_over %}
+        {% if winner %}
+            <h2>Player {{ winner }} wins!</h2>
+        {% else %}
+            <h2>It's a tie!</h2>
+        {% endif %}
+        <button onclick="resetGame()">Play Again</button>
+    {% endif %}
+</body>
+</html>

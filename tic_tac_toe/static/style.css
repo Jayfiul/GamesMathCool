@@ -1,0 +1,21 @@
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table td {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 48px;
+    border: 1px solid black;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
