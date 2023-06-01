@@ -8,6 +8,12 @@
     <h1>Hangman Game</h1>
     <div id="word-display">{{ word_display }}</div>
     <div id="chances">Chances remaining: {{ chances }}</div>
+    <div id="guessed-letters">
+        Guessed letters:
+        {% for letter in guessed_letters %}
+            {{ letter }}
+        {% endfor %}
+    </div>
     <form method="POST" action="/">
         <input type="text" name="letter" maxlength="1" autocomplete="off" required>
         <button type="submit">Guess</button>

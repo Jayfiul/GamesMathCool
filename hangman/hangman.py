@@ -4,14 +4,16 @@ import random
 app = Flask(__name__)
 app.secret_key = 'mysecretkey'
 
-words = ['ching']
+words = ['ching','aziz','monkey']
 
 def get_random_word():
     return random.choice(words)
 
 def initialize_session():
+    if 'guessed_letters' not in session:
+        session['guessed_letters'] = []
+
     session['word'] = get_random_word()
-    session['guessed_letters'] = []
     session['chances'] = 6
 
 @app.route('/', methods=['GET', 'POST'])
@@ -39,7 +41,8 @@ def play_game():
     if session['chances'] == 0:
         return render_template('lose.html', word=session['word'])
 
-    return render_template('play.html', word_display=word_display, chances=session['chances'])
+    return render_template('play.html', word_display=word_display, chances=session['chances'], guessed_letters=session['guessed_letters'])
+
 
 
 @app.route('/reset')
