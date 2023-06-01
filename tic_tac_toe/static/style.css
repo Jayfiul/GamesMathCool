@@ -1,21 +1,21 @@
 table {
     border-collapse: collapse;
-    margin-top: 20px;
+    margin: 20px;
 }
 
-table td {
+td {
     width: 100px;
     height: 100px;
     text-align: center;
-    font-size: 48px;
-    border: 1px solid black;
+    font-size: 36px;
+    border: 2px solid black;
 }
 
 h1, h2 {
     text-align: center;
 }
 
-a {
-    text-decoration: none;
-    color: black;
+button {
+    display: block;
+    margin: 20px auto;
 }
