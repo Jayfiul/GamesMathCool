@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Brick Break Game</title>
@@ -13,5 +13,51 @@
 <body>
     <canvas id="gameCanvas" width="480" height="320"></canvas>
     <script src="{{ url_for('static', filename='game.js') }}"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brick Break Game</title>
+    <style>
+        canvas {
+            background-color: black;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="480" height="320"></canvas>
+    <button onclick="loadGame('game1.js')">Level 1</button>
+    <button onclick="loadGame('game2.js')">Level 2</button>
+    <button onclick="loadGame('game3.js')">Level 3</button>
+
+    <script>
+        function loadGame(gameScript) {
+            var gameScriptElement = document.createElement('script');
+            gameScriptElement.src = gameScript;
+            gameScriptElement.onload = function() {
+                startGame();
+            };
+
+            var existingGameScript = document.querySelector('#gameScript');
+            if (existingGameScript) {
+                existingGameScript.remove();
+            }
+
+            gameScriptElement.id = 'gameScript';
+            document.body.appendChild(gameScriptElement);
+        }
+
+        function startGame() {
+            if (typeof start !== 'undefined') {
+                start();
+            }
+        }
+
+        loadGame('game1.js');
+    </script>
 </body>
 </html>
