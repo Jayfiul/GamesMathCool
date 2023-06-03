@@ -30,6 +30,9 @@ for (let c = 0; c < brickColumnCount; c++) {
   }
 }
 
+let interval;
+let level = 1;
+
 function drawBricks() {
   for (let c = 0; c < brickColumnCount; c++) {
     for (let r = 0; r < brickRowCount; r++) {
@@ -78,9 +81,14 @@ function collisionDetection() {
           dy = -dy;
           brick.status = 0;
           if (checkWinCondition()) {
-            alert("Congratulations! You won!");
-            document.location.reload();
-            clearInterval(interval);
+            showCongratulationsMessage();
+            if (level === 3) {
+              clearInterval(interval);
+            } else {
+              setTimeout(() => {
+                navigateToLevel('level' + (3));
+              }, 500);
+            }
           }
         }
       }
@@ -115,12 +123,7 @@ function draw() {
     if (x > paddleX && x < paddleX + paddleWidth) {
       dy = -dy;
     } else {
-      if (checkWinCondition()) {
-        alert("Congratulations! You won!");
-      } else {
-        alert("Game Over. Try again!");
-      }
-      document.location.reload();
+      showGameOverMessage();
       clearInterval(interval);
     }
   }
@@ -151,7 +154,27 @@ function keyUpHandler(e) {
   }
 }
 
+function navigateToLevel(level) {
+  window.location.href = '/' + level;
+}
+
+function resetGame() {
+  document.location.reload();
+}
+
+function showGameOverMessage() {
+  const messageElement = document.getElementById("gameOverMessage");
+  messageElement.textContent = "Game Over. Try again!";
+  messageElement.style.display = "block";
+}
+
+function showCongratulationsMessage() {
+  const messageElement = document.getElementById("gameOverMessage");
+  messageElement.textContent = "Congratulations! You won!";
+  messageElement.style.display = "block";
+}
+
 document.addEventListener("keydown", keyDownHandler);
 document.addEventListener("keyup", keyUpHandler);
 
-setInterval(draw, 10);
+interval = setInterval(draw, 10);
