@@ -31,8 +31,10 @@ def drop_piece(column):
             grid[row][column] = current_player
             return row
 
-def check_winner(row, col):
-    directions = [(1, 0), (0, 1), (1, 1), (-1, 1)]
+def check_winner(row,col):
+    win = False
+    directions = [(0,1),(0,-1),(-1, 0), (1, 0), (1, 1), (-1, 1),(1,-1),(-1,-1),]
+    # up, down, left, right, right-up, left-up, right-down, left-down, 
 
     for dx, dy in directions:
         count = 0
@@ -42,22 +44,22 @@ def check_winner(row, col):
             x += dx
             y += dy
 
-        x, y = row, col
-        while x >= 0 and x < ROWS and y >= 0 and y < COLS and grid[x][y] == current_player:
-            count += 1
-            x -= dx
-            y -= dy
-
         if count >= 4:
-            # We have a winner
-            return current_player
+            win = True
+            print("congrats you won!")
 
     # Switch the player
-    toggle_player()
+    if (win):
+        return render_template('win.html')
+    else:
+        toggle_player()
 
 def toggle_player():
     global current_player
     current_player = players[(players.index(current_player) + 1) % len(players)]
+
+def reset_board():
+    return render_template('index.html', grid=grid)
 
 if __name__ == '__main__':
     app.run(debug=True)
