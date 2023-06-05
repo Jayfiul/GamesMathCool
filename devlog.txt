@@ -1,0 +1,29 @@
+GamesMathCool
+Yusha Aziz
+William Guo
+Jeffrey Zou
+Sebastian Ching
+pd 2
+---------------------
+project 5
+
+
+ ______   ______   __   __   __       ______   _______
+/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\
+\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__
+ \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\
+  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/
+   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \
+    \____/_/ \_____\/ \___/_/   \_____\/ \_____\/ \_____\/
+==============================================================
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+WilliamG -- 2023-06-04 20:47
+--------------------------------------------------------------
+* Updated design document with feedback
+  - description/summary of website updated to make goals more clear
+  - games created do not have to be single player
+  - updated front-end site map to include login page
+  - removed uneccesary sections of component map and updated api calls
+==============================================================
