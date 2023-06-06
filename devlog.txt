@@ -27,3 +27,10 @@ WilliamG -- 2023-06-04 20:47
   - updated front-end site map to include login page
   - removed uneccesary sections of component map and updated api calls
 ==============================================================
+
+JeffZ -- 2023-06-05 21:30
+--------------------------------------------------------------
+- Created and set up base website with placeholder games
+- Routed one of our games to base website for testing
+- Added styling via CSS
+==============================================================

@@ -3,8 +3,12 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
-def index():
+def home():
     return render_template('index.html')
+
+@app.route('/brick_break')
+def brick_break():
+    return render_template('brick_break.html')
 
 @app.route('/level1')
 def level1():
