@@ -49,9 +49,11 @@ function moveSnake() {
     }
   
     snake.unshift(head);
-  
+    
+    //eat apple part
     if (head.x === apple.x && head.y === apple.y) {
       createApple();
+      currentSpeed += speedIncreaseAmount
     } else {
       snake.pop();
     }
@@ -68,22 +70,6 @@ function clearCanvas() {
 }
 
 function gameLoop() {
-    if (currentSpeed === 0) {
-      return; // Stop the game if the speed is 0
-    }
-  
-    elapsed += currentSpeed;
-  
-    if (elapsed >= speedIncreaseInterval) {
-      elapsed = 0;
-      currentSpeed -= speedIncreaseAmount;
-      if (currentSpeed < 0) {
-        currentSpeed = 0;
-      }
-      clearInterval(gameInterval);
-      gameInterval = setInterval(gameLoop, currentSpeed);
-    }
-  
     clearCanvas();
     drawApple();
     moveSnake();
@@ -91,9 +77,6 @@ function gameLoop() {
   }
   
   
-  
-  
-
 document.addEventListener('keydown', changeDirection);
 
 function changeDirection(event) {
@@ -133,8 +116,6 @@ function changeDirection(event) {
 let gameInterval;
 const initialSpeed = 100;
 let currentSpeed = initialSpeed;
-let elapsed = 0;
-const speedIncreaseInterval = 1000; // Increase speed every second
 const speedIncreaseAmount = 10; // Amount to increase the speed
 
 function startGame() {
@@ -149,7 +130,6 @@ function startGame() {
     dx = 10;
     dy = 0;
     currentSpeed = initialSpeed; // Reset the current speed to the initial speed
-    elapsed = 0;
   
     gameInterval = setInterval(gameLoop, currentSpeed);
   }
