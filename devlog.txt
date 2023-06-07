@@ -18,6 +18,29 @@ project 5
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+YushaA -- 2023-05-31 20:56
+--------------------------------------------------------------
+  - formulated a list of games to work on for the weekend
+    - hangman
+    - brickbreak
+    - snake
+    - rock paper scissors
+  - finished hangman
+  - tested for bugs
+==============================================================
+
+YushaA -- 2023-06-01 23:17
+--------------------------------------------------------------
+  - finished rock paper scissors
+  - started to work on tic tac toe but had no sucess
+==============================================================
+
+YushaA -- 2023-06-02 18:07
+--------------------------------------------------------------
+  - started the brick break game
+  - finished the brick break game, fixed bugs, and added extra levels
+  - started connect4, but still no sucess
+==============================================================
 
 WilliamG -- 2023-06-04 20:47
 --------------------------------------------------------------
