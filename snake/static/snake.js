@@ -1,138 +1,181 @@
 const canvas = document.getElementById('snakeCanvas');
-const context = canvas.getContext('2d');
+const ctx = canvas.getContext('2d');
 
-const snakeSize = 20;
-const canvasSize = 400;
-const initialSnakeLength = 3;
-let snake = [];
-let dx = 10;
+class SnakePart{
+    constructor(x,y){
+        this.x = x;
+        this.y = y;
+    }
+}
+
+let speed = 7; // initial speed
+
+let tileCount = 20;
+let tileSize = canvas.width / tileCount- 2;
+let headX = 10;
+let headY = 10;
+
+const snakeParts = [];
+let tailLength = 2; // initial length 
+
+// snake head direction
+let dx = 0;
 let dy = 0;
-let apple = { x: 0, y: 0 };
 
-canvas.width = canvasSize;
-canvas.height = canvasSize;
+let appleX = 5;
+let appleY = 5;
 
-function getRandomPosition() {
-  return Math.floor(Math.random() * (canvasSize / snakeSize)) * snakeSize;
-}
+let score = 0;
 
-function createApple() {
-  apple.x = getRandomPosition();
-  apple.y = getRandomPosition();
-}
-
-function drawSnakePart(snakePart) {
-  context.fillStyle = 'green';
-  context.strokeStyle = 'darkgreen';
-  context.fillRect(snakePart.x, snakePart.y, snakeSize, snakeSize);
-  context.strokeRect(snakePart.x, snakePart.y, snakeSize, snakeSize);
-}
-
-function drawSnake() {
-  snake.forEach(drawSnakePart);
-}
-
-function moveSnake() {
-    const head = { x: snake[0].x + dx, y: snake[0].y + dy };
-  
-    // Check if the snake hits the canvas boundaries
-    if (
-      head.x < 0 ||
-      head.x >= canvasSize ||
-      head.y < 0 ||
-      head.y >= canvasSize
-    ) {
-      // End the game or perform the necessary action
-      // For now, we simply reset the game by calling the startGame function
-      startGame();
-      return;
-    }
-  
-    snake.unshift(head);
-    
-    //eat apple part
-    if (head.x === apple.x && head.y === apple.y) {
-      createApple();
-      currentSpeed += speedIncreaseAmount
-    } else {
-      snake.pop();
-    }
-  }
-  
-
-function drawApple() {
-  context.fillStyle = 'red';
-  context.fillRect(apple.x, apple.y, snakeSize, snakeSize);
-}
-
-function clearCanvas() {
-  context.clearRect(0, 0, canvasSize, canvasSize);
-}
-
-function gameLoop() {
-    clearCanvas();
-    drawApple();
+//game loop
+function drawGame(){
     moveSnake();
+    // stops game if game over
+    let result = isGameOver();
+    if(result){
+        return;
+    }
+    clearScreen();
+
+    eatApple();
+    drawApple();
     drawSnake();
-  }
-  
-  
-document.addEventListener('keydown', changeDirection);
 
-function changeDirection(event) {
-  const LEFT_KEY = 37;
-  const RIGHT_KEY = 39;
-  const UP_KEY = 38;
-  const DOWN_KEY = 40;
+    showScore();
 
-  const keyPressed = event.keyCode;
-
-  const goingUp = dy === -10;
-  const goingDown = dy === 10;
-  const goingRight = dx === 10;
-  const goingLeft = dx === -10;
-
-  if (keyPressed === LEFT_KEY && !goingRight) {
-    dx = -10;
-    dy = 0;
-  }
-
-  if (keyPressed === UP_KEY && !goingDown) {
-    dx = 0;
-    dy = -10;
-  }
-
-  if (keyPressed === RIGHT_KEY && !goingLeft) {
-    dx = 10;
-    dy = 0;
-  }
-
-  if (keyPressed === DOWN_KEY && !goingUp) {
-    dx = 0;
-    dy = 10;
-  }
+    setTimeout(drawGame, 1000/speed)
 }
 
-let gameInterval;
-const initialSpeed = 100;
-let currentSpeed = initialSpeed;
-const speedIncreaseAmount = 10; // Amount to increase the speed
+function isGameOver(){
+    let gameOver = false;
 
-function startGame() {
-    clearInterval(gameInterval);
-  
-    snake = [];
-    for (let i = initialSnakeLength - 1; i >= 0; i--) {
-      snake.push({ x: i * snakeSize, y: 0 });
+    if(dx === 0 && dy === 0){
+      return  false;
     }
-    createApple();
   
-    dx = 10;
-    dy = 0;
-    currentSpeed = initialSpeed; // Reset the current speed to the initial speed
+    // wall collisions
+    if (headX < 0){
+        gameOver = true;
+    }
+    else if (headX === tileCount){
+        gameOver = true;
+    }
+    else if (headY < 0){
+        gameOver = true;
+    }else if (headY === tileCount){
+        gameOver = true;
+    }
   
-    gameInterval = setInterval(gameLoop, currentSpeed);
+    //body collision
+    for (let i = 0; i < snakeParts.length; i++){
+      let part = snakeParts[i];
+      if (part.x === headX && part.y === headY){
+        gameOver = true;
+        break;
+      }
+    }
+
+    // game over screen
+    if (gameOver){
+      ctx.fillStyle = "white";
+      ctx.font = "50px Verdana";
+  
+      ctx.fillText("Game Over!", canvas.width/6.5, canvas.height/2)
+    }
+
+    return gameOver;
   }
-  
-  
-startGame();
+
+function showScore(){
+    ctx.fillStyle = "white"
+    ctx.font = "10px Verdana"
+    ctx.fillText("Score: " + score, canvas.width-50, 10)
+}
+
+function clearScreen(){
+    ctx.fillStyle = 'black';
+    ctx.fillRect(0,0,canvas.width, canvas.height)
+}
+
+function drawSnake(){
+    // snake body
+    ctx.fillStyle = 'green';
+    for (let i = 0; i < snakeParts.length; i++){
+        let part = snakeParts[i];
+        ctx.fillRect(part.x * tileCount, part.y * tileCount, tileSize,tileSize)
+    }
+
+    // add tail to the end of snake
+    snakeParts.push(new SnakePart(headX,headY));
+    if(snakeParts.length > tailLength){
+        snakeParts.shift(); //remove furthest item from snake parts if > tail size
+    }
+
+    // snake head
+    ctx.fillStyle = 'orange'
+    ctx.fillRect(headX * tileCount, headY * tileCount, tileSize, tileSize)
+
+}
+
+function moveSnake(){
+    headX = headX + dx;
+    headY = headY + dy;
+}
+
+function drawApple(){
+    ctx.fillStyle = "red"
+    ctx.fillRect(appleX * tileCount,appleY*tileCount,tileSize,tileSize)
+}
+
+// if snake eat apple, new apple spawn in random place
+function eatApple(){
+    if(appleX === headX && appleY === headY){
+        appleX = Math.floor(Math.random() * tileCount)
+        appleY = Math.floor(Math.random() * tileCount)
+        tailLength++; // increase body part when apple eaten
+        score++;
+        speed++; // increases speed 
+    }
+}
+
+document.body.addEventListener('keydown', keyDown)
+function keyDown(event){
+    // up
+    if (event.keyCode == 38){
+        if(dy == 1){ // if moving down, stop user from moving up
+          return;
+        }
+        dy = -1;
+        dx = 0;
+      }
+    
+      // down_key
+      if (event.keyCode == 40){
+        if(dy == -1){
+          return;
+        }
+        dy = 1;
+        dx = 0;
+      }
+    
+      // left_key
+      if (event.keyCode == 37){
+        if(dx == 1){
+          return;
+        }
+        dy = 0;
+        dx = -1;
+      }
+    
+       // right_key
+       if (event.keyCode == 39){
+        if(dx == -1){
+          return;
+        }
+        dy = 0;
+        dx = 1;
+      }
+    
+}
+
+drawGame();
