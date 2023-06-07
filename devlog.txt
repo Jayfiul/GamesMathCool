@@ -34,3 +34,16 @@ JeffZ -- 2023-06-05 21:30
 - Routed one of our games to base website for testing
 - Added styling via CSS
 ==============================================================
+
+WilliamG -- 2023-06-06 09:15
+--------------------------------------------------------------
+* Debugging connect4 where it doesn't detect a winner
+==============================================================
+
+WilliamG -- 2023-06-07 00:10
+--------------------------------------------------------------
+* Debugged snake game where snake doesn't increase speed when eating new apples
+* Updated canvas drawing of game so each body part of snake is one tile size
+* Added game over screen and lose conditions (wall collision and body collision)
+* Added score to top right
+==============================================================
