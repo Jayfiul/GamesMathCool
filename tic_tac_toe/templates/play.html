@@ -2,42 +2,26 @@
 <html>
 <head>
     <title>Tic Tac Toe</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="../static/tic.css">
 </head>
 <body>
-    <h1>Tic Tac Toe</h1>
-    <p>Current Player: <span id="current-player">{{ current_player }}</span></p>
+    <div class = container>
+        <h1 id = "playerText">Tic Tac Toe</h1>
+        <button id = "restart">Restart</button>
 
-    <table>
-        <tr>
-            <td><button onclick="makeMove(0)" id="cell-0"></button></td>
-            <td><button onclick="makeMove(1)" id="cell-1"></button></td>
-            <td><button onclick="makeMove(2)" id="cell-2"></button></td>
-        </tr>
-        <tr>
-            <td><button onclick="makeMove(3)" id="cell-3"></button></td>
-            <td><button onclick="makeMove(4)" id="cell-4"></button></td>
-            <td><button onclick="makeMove(5)" id="cell-5"></button></td>
-        </tr>
-        <tr>
-            <td><button onclick="makeMove(6)" id="cell-6"></button></td>
-            <td><button onclick="makeMove(7)" id="cell-7"></button></td>
-            <td><button onclick="makeMove(8)" id="cell-8"></button></td>
-        </tr>
-    </table>
-
-    {% if game_over %}
-        <div id="winner-screen">
-            <h2>Game Over</h2>
-            {% if winner %}
-                <h3>Player {{ winner }} wins!</h3>
-            {% else %}
-                <h3>It's a tie!</h3>
-            {% endif %}
-            <button id="reset-button" onclick="resetGame()">Play Again</button>
+        <div id = "board">
+            <div class = "box" id = "0"></div>
+            <div class = "box" id = "1"></div>
+            <div class = "box" id = "2"></div>
+            <div class = "box" id = "3"></div>
+            <div class = "box" id = "4"></div>
+            <div class = "box" id = "5"></div>
+            <div class = "box" id = "6"></div>
+            <div class = "box" id = "7"></div>
+            <div class = "box" id = "8"></div>
+            
         </div>
-    {% endif %}
-
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </div>
+    <script src="../static/tic.js"></script>
 </body>
 </html>
