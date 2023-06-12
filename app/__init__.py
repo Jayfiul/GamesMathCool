@@ -75,10 +75,6 @@ def hangman_reset():
     session.clear()
     return redirect(url_for('hangman'))
 
-@app.route('/hangman_reset')
-def hangman_reset():
-    return render_template('hangman.html')
-
 @app.route('/memory')
 def memory():
     return render_template('memory.html')
