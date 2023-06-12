@@ -108,6 +108,26 @@ YushaA -- 2023-06-12 18:05
   - connect4
   - snake
   - memorgy game
+  - brick break
+  - memory
   - tic-tac-toe
   - rock-paper-scissors
 ==============================================================
+
+YushaA -- 2023-06-12 20:06
+--------------------------------------------------------------
+* bug tested following games
+  - hangman -- 1 BUG
+  - connect4 -- NO BUGS
+  - memory -- NO BUGS
+  - snake -- 1 BUG
+  - memorgy game -- NO BUGS
+  - tic-tac-toe
+  - brick break
+  - rock-paper-scissors
+* fixed following bugs
+  - for hangman if you loaded it automatically showed loss
+  - snake does not have a reset button
+==============================================================
+
+

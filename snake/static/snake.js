@@ -1,6 +1,10 @@
 const canvas = document.getElementById('snakeCanvas');
 const ctx = canvas.getContext('2d');
 
+const resetButton = document.getElementById('resetButton');
+resetButton.addEventListener('click', resetGame);
+
+
 class SnakePart{
     constructor(x,y){
         this.x = x;
@@ -26,6 +30,22 @@ let appleX = 5;
 let appleY = 5;
 
 let score = 0;
+
+function resetGame() {
+  snakeParts.length = 0;
+  tailLength = 2;
+  dx = 0;
+  dy = 0;
+  headX = 10;
+  headY = 10;
+  appleX = 5;
+  appleY = 5;
+  score = 0;
+  speed = 7;
+
+  drawGame();
+}
+
 
 //game loop
 function drawGame(){

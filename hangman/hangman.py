@@ -4,7 +4,7 @@ import random
 app = Flask(__name__)
 app.secret_key = 'mysecretkey'
 
-words = ['ching','aziz','monkey']
+words = ['bok choy','burger','monkey', 'mykolyk', 'computer', 'basketball', 'tiger', 'explosion', 'kitten', 'poker', 'glue', 'alarm', 'car', 'bmw', 'google']
 
 def get_random_word():
     return random.choice(words)
