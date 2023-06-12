@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/rps.css">
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <div class="score">
+        <h3>Player Score: {{ player_score }}</p>
+        <h3>Computer Score: {{ computer_score }}</p>
+    </div>
+    <form action="/" method="POST">
+        <div class="choices">
+            <input type="radio" id="rock" name="choice" value="rock">
+            <label for="rock" class="choice-label"><img src="../static/img/rock.jpg" alt="Rock" class="choice-image"></label>
+            
+            <input type="radio" id="paper" name="choice" value="paper">
+            <label for="paper" class="choice-label"><img src="../static/img/paper.jpg" alt="Paper" class="choice-image"></label>
+            
+            <input type="radio" id="scissors" name="choice" value="scissors">
+            <label for="scissors" class="choice-label"><img src="../static/img/scissors.jpg" alt="Scissors" class="choice-image"></label>
+        </div>
+        <input type="submit" value="Play">
+    </form>
+    {% if result %}
+        <div class="result">
+            <h2>{{ result }}</h2>
+            <p>You chose: {{ player_choice }}</p>
+            <p>Computer chose: {{ computer_choice }}</p>
+            <a href="/" class="play-again">Play Again</a>
+        </div>
+    {% endif %}
+    <table>
+        <thead>
+            <tr>
+                <th>Game Number</th>
+                <th>Player Choice</th>
+                <th>Computer Choice</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results[::-1] %}
+            <tr>
+                <td>{{ loop.revindex }}</td>
+                <td>{{ result[0] }}</td>
+                <td>{{ result[1] }}</td>
+                <td>{{ result[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    
+</body>
+</html>
