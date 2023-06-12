@@ -22,5 +22,9 @@ def level2():
 def level3():
     return render_template('level3.html')
 
+@app.route('/tic_tac_toe')
+def tic_tac_toe():
+    return render_template('tic.html')
+
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
