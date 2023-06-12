@@ -2,22 +2,15 @@
 <html>
 <head>
     <title>Connect Four</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="../static/connect4.css">
+    <script src="../static/connect4.js"></script>
 </head>
 <body>
-    <h1>Connect Four</h1>
-    <table>
-        {% for row in grid %}
-            <tr>
-                {% for cell in row %}
-                    <td>{{ cell }}</td>
-                {% endfor %}
-            </tr>
-        {% endfor %}
-    </table>
-    <form action="{{ url_for('play') }}" method="POST">
-        <input type="number" name="column" min="0" max="{{ grid[0]|length - 1 }}">
-        <input type="submit" value="Drop">
-    </form>
+    <h1>Connect 4</h1>
+    <h2 id = "winner"></h2>
+    <div id = "board"></div>
+    <br>
+    <button id = "restart">Restart</button>
+    
 </body>
 </html>
