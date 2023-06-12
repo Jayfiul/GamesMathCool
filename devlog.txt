@@ -122,9 +122,10 @@ YushaA -- 2023-06-12 20:06
   - memory -- NO BUGS
   - snake -- 1 BUG
   - memorgy game -- NO BUGS
-  - tic-tac-toe
-  - brick break
+  - tic-tac-toe -- NO BUGS
+  - brick break -- NO BUGS
   - rock-paper-scissors
+  - pacman -- COMPLETELY BROKEN [REMOVED]
 * fixed following bugs
   - for hangman if you loaded it automatically showed loss
   - snake does not have a reset button
