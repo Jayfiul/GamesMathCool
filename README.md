@@ -10,7 +10,9 @@
 
 ---
 ## Abstract/Summary of App:
-We plan to create a site similar to CoolMathGames where users are able to play multiple games whether it's solo play or with a friend. Users will be able to select the type of game they want by clicking on the play button below each game icon as well as having the ability to access other games through a side panel when the game is in session. Our group plans to utilize ChatGPT to help with the basic framework for certain games and see if it's able to create a fully functioning game. If not, we plan to use both the program itself to correct its own code as well as fixing it ourselves. The styling and design choices will be made by the group members.
+  We plan to create a site similar to CoolMathGames where users are able to play multiple games whether it's solo play or with a friend. Users will be able to select the type of game they want by clicking on the play button below each game icon as well as having the baility to access other games through a side panel when the game is in session. 
+  Our group plans to utilize ChatGPT to help with the basic framework for certain games to see if it's able to create a fully function game. If not, we plan to use both the program itself to correvt its wo ncode as well as fixing it ourselves with our own CS knowledge. The styling and design choices of the game and website will be made by the group members. 
+
 ---
 ## API Cards:
 
