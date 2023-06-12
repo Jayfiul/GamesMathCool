@@ -122,13 +122,16 @@ YushaA -- 2023-06-12 20:06
   - memory -- NO BUGS
   - snake -- 1 BUG
   - memorgy game -- NO BUGS
-  - tic-tac-toe -- NO BUGS
+  - tic-tac-toe -- 1 BUG
   - brick break -- NO BUGS
-  - rock-paper-scissors
+  - rock-paper-scissors -- 1 BUG 
   - pacman -- COMPLETELY BROKEN [REMOVED]
+  - dotconnect -- COMPLETELY BROKEN [REMOVED]
 * fixed following bugs
   - for hangman if you loaded it automatically showed loss
   - snake does not have a reset button
+  - for tic_tac_toe it did not show which players turn it is
+  - for rock_paper_scissors the table columns were messed up
 ==============================================================
 
 
