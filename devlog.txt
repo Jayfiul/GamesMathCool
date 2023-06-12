@@ -70,3 +70,20 @@ WilliamG -- 2023-06-07 00:10
 * Added game over screen and lose conditions (wall collision and body collision)
 * Added score to top right
 ==============================================================
+
+WilliamG -- 2023-06-09 09:00
+--------------------------------------------------------------
+* started a memory game using js, tons of bugs to fix
+ - card shows both the front and back image
+ - doesn't flip to reveal both sides
+ - matching pairs not detecting
+==============================================================
+
+WilliamG -- 2023-06-11 21:13
+--------------------------------------------------------------
+* completed simple color memory game and added a restart button that resets game (game revamped to be easier)
+* fixed connect4 issue which now stops game when there is a winner, also displays that winner
+ - connect 4 now has a board and tile
+ - also a restart button that resets board
+* completed tic-tac-toe game with highlights of winning combination and restart button
+==============================================================
