@@ -87,3 +87,16 @@ WilliamG -- 2023-06-11 21:13
  - also a restart button that resets board
 * completed tic-tac-toe game with highlights of winning combination and restart button
 ==============================================================
+
+WilliamG -- 2023-06-12 9:11
+--------------------------------------------------------------
+* began moving all the games into the main app file, the following games have been sucessfully transfered over:
+ - hangman
+ - connect4
+ - snake
+ - memory game
+ - tic-tac-toe
+ - rock-paper-scissors 
+* added routing for all of the games above in __init__
+* updated README file with missing info
+==============================================================
