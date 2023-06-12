@@ -100,3 +100,14 @@ WilliamG -- 2023-06-12 9:11
 * added routing for all of the games above in __init__
 * updated README file with missing info
 ==============================================================
+
+YushaA -- 2023-06-12 18:05
+--------------------------------------------------------------
+* added the image logo for the following games:
+  - hangman
+  - connect4
+  - snake
+  - memorgy game
+  - tic-tac-toe
+  - rock-paper-scissors
+==============================================================
