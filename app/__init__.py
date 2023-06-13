@@ -119,6 +119,9 @@ def get_winner(player_choice, computer_choice):
     else:
         return "Computer wins!", f"{player_choice}.jpg", f"{computer_choice}.jpg"
 
+@app.route('/2048')
+def S2048():
+    return render_template('S2048.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
