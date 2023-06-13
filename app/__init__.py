@@ -121,7 +121,7 @@ def get_winner(player_choice, computer_choice):
 
 @app.route('/2048')
 def S2048():
-    return render_template('S2048.html')
+    return render_template('2048.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
