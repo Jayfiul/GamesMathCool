@@ -1,5 +1,4 @@
 let playerText = document.getElementById('playerText')
-let turnText = document.getElementById('turnText') // New line to get the turn text element
 let restartBtn = document.getElementById('restart')
 let boxes = Array.from(document.getElementsByClassName('box'))
 
@@ -15,16 +14,16 @@ const startGame = () => {
     boxes.forEach(box => box.addEventListener('click', fillBox))
 }
 
-// keep track of which box was clicked by filling boxes
+//keep track of which box was clicked by filling boxes
 function fillBox(e) {
-    const id = e.target.id; // get id of html
+    const id = e.target.id; //get id of html
     // if id not filled fill box with letter of current player
-    if (!selectedBoxes[id] && count_plays < 9) {
+    if (!selectedBoxes[id] && count_plays < 9){
         selectedBoxes[id] = currentPlayer
         e.target.innerText = currentPlayer
 
-        // check win condition
-        if (playerWon() !== false) {
+        //check win condition
+        if(playerWon() !== false ){
             playerText.innerHTML = `${currentPlayer} has won!`
             let winning_blocks = playerWon()
             count_plays = 10
@@ -32,6 +31,7 @@ function fillBox(e) {
             return
         }
         count_plays++
+        // basically saying if current player is x, current play = 0 and vice versa 
         currentPlayer = currentPlayer == X ? O : X
 
         // Update the turn text element
@@ -39,7 +39,7 @@ function fillBox(e) {
     }
 
     // if there is a tie
-    if (count_plays === 9) {
+    if(count_plays === 9){
         playerText.innerHTML = "It's a tie!"
     }
 }
@@ -47,25 +47,25 @@ function fillBox(e) {
 // Array of all possible winning combinations 
 const winningCombos = [
     // horizontal 
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
     // vertical
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    // diagonal
-    [0, 4, 8],
-    [2, 4, 6]
-]
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    //diagonal
+    [0,4,8],
+    [2,4,6]
 
-function playerWon() {
+]
+function playerWon(){
     // a b c can take up any of the winning Combos
     for (const condition of winningCombos) {
-        let [a, b, c] = condition
+        let [a,b,c] = condition
         // if a = b = c, player has won
-        if (selectedBoxes[a] && (selectedBoxes[a] == selectedBoxes[b] && selectedBoxes[a] == selectedBoxes[c])) {
-            return [a, b, c]
+        if (selectedBoxes[a] && (selectedBoxes[a] == selectedBoxes[b] && selectedBoxes[a] == selectedBoxes[c])){
+            return [a,b,c]
         }
     }
     return false;
@@ -73,11 +73,11 @@ function playerWon() {
 
 restartBtn.addEventListener('click', restartGame)
 
-// clear board and selectedBoxes array and reset currentplayer
+//clear board and selectedBoxes array and reset currentplayer
 function restartGame() {
     selectedBoxes.fill(null)
     count_plays = 0
-    boxes.forEach(box => {
+    boxes.forEach( box => {
         box.innerText = ''
         box.style.backgroundColor = ''
     })
