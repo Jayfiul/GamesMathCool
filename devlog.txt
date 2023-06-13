@@ -134,6 +134,20 @@ YushaA -- 2023-06-12 20:06
   - for rock_paper_scissors the table columns were messed up
 ==============================================================
 
+YushaA -- 2023-06-12 22:07
+--------------------------------------------------------------
+* moved all the games from their individual folders to the __init__.play
+* had to rewrite rock_paper_scissors and hangman to accomodate
+* added all the images on the main homepage for the following games
+  - brick break
+  - memory
+  - hangman
+  - snake
+  - 2048
+  - tic tac toe
+  - rock_paper_scissors
+  - Connect4
+==============================================================
 
 JeffZ -- 2023-06-12 21:30
 --------------------------------------------------------------
