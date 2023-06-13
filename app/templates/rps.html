@@ -10,7 +10,7 @@
         <h3>Player Score: {{ player_score }}</p>
         <h3>Computer Score: {{ computer_score }}</p>
     </div>
-    <form action="/" method="POST">
+    <form action="/rps" method="POST">
         <div class="choices">
             <input type="radio" id="rock" name="choice" value="rock">
             <label for="rock" class="choice-label"><img src="../static/img/rock.jpg" alt="Rock" class="choice-image"></label>
@@ -28,7 +28,7 @@
             <h2>{{ result }}</h2>
             <p>You chose: {{ player_choice }}</p>
             <p>Computer chose: {{ computer_choice }}</p>
-            <a href="/" class="play-again">Play Again</a>
+            <a href="/rps" class="play-again">Play Again</a>
         </div>
     {% endif %}
     <table>
@@ -44,9 +44,9 @@
             {% for result in results[::-1] %}
             <tr>
                 <td>{{ loop.revindex }}</td>
-                <td>{{ result[0] }}</td>
                 <td>{{ result[1] }}</td>
                 <td>{{ result[2] }}</td>
+                <td>{{ result[3] }}</td>
             </tr>
             {% endfor %}
         </tbody>
