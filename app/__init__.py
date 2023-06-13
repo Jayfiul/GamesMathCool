@@ -32,7 +32,10 @@ def connect4():
     return render_template('connect4.html')
 
 # HANGMAN STUFF 
-words = ['ching','aziz','monkey']
+app.secret_key = 'mysecretkey'
+
+words = ['bok choy','burger','monkey', 'mykolyk', 'computer', 'basketball', 'tiger', 'explosion', 'kitten', 'poker', 'glue', 'alarm', 'car', 'bmw', 'google']
+
 def get_random_word():
     return random.choice(words)
 
