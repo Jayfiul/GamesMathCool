@@ -31,6 +31,14 @@ def tic_tac_toe():
 def connect4():
     return render_template('connect4.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/contact')
+def about():
+    return render_template('contact.html')
+
 # HANGMAN STUFF 
 app.secret_key = 'mysecretkey'
 
