@@ -131,5 +131,9 @@ def get_winner(player_choice, computer_choice):
 def S2048():
     return render_template('2048.html')
 
+@app.route('/connect4')
+def C4():
+    return render_template('connect4.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
