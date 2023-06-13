@@ -30,13 +30,12 @@
             <p>Computer chose: {{ computer_choice }}</p>
             <a href="/rps" class="play-again">Play Again</a>
         </div>
-    {% endif %}
+{% endif %}
     <table>
         <thead>
             <tr>
                 <th>Game Number</th>
                 <th>Player Choice</th>
-                <th>Computer Choice</th>
                 <th>Result</th>
             </tr>
         </thead>
@@ -44,7 +43,7 @@
             {% for result in results[::-1] %}
             <tr>
                 <td>{{ loop.revindex }}</td>
-                <td>{{ result[1] }}</td>
+                <td>{{ result[0] }}</td>
                 <td>{{ result[2] }}</td>
                 <td>{{ result[3] }}</td>
             </tr>
@@ -55,3 +54,4 @@
     
 </body>
 </html>
+
