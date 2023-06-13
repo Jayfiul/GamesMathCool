@@ -1,87 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>My Cool Math Games</title>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap' rel='stylesheet'>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css" integrity="sha512-SgaqKKxJDQ/tAUAAXzvxZz33rmn7leYDYfBP+YoMRSENhf3zJyx3SBASt/OfeQwBHA1nxMis7mM3EV/oYT6Fdw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-  <header>
-    <h1>Welcome to My Cool Math Games!</h1>
-  </header>
+    <section class="hero">
+        <div class="main-width">
+            <header>
+                <div class="logo">
+                    <h2><a href="/"><img src="../static/img/mathcoolgames.png"></a></h2>
 
-  <nav>
-    <div class="navbar-container">
-      <div class="navbar-menu">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Games</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
+                </div>
 
-  <main>
-    <h2>Featured Math Games</h2>
-
-    <div class="game-container">
-      <p1>Single Player Games</p1>
-      
-      <div class="game-row">
-        <div class="game">
-          <img src="game1.png" alt="Game 1">
-          <h4>Brick Break</h4>
-          <p>Destroy all the breaks with a ball</p>
-          <a href="/brick_break">Play Now</a>
+                <nav>
+                    <ul>
+                        <li class="active"><a href="/">HOME</a></li>
+                        <li><a href="/games">GAMES</a></li>
+                        <li><a href="/about">INSIGHTS</a></li>
+                        <li><a href="#">SUPPORT</a></li>
+                        <li class="btn"><a href="#">LOGIN</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="content">
+                <i>"Quantity over quality"</i>
+                <div class="main-text">
+                    <h2>BEST ONLINE GAMES IN STUY</h2>
+                    <div class="sub-text">
+                    <p>Math Cool Games is a website that provides a variety of games that help students </br>learn math in a
+                     fun and interactive way. Using ChatGPT, we are able to mass produce </br>games. </p>
+                 
+              
+                     <a href="/games" class="btn"><i class="fa-solid fa-gamepad"></i>Play Now</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="game">
-          <img src="game2.png" alt="Game 2">
-          <h4>Memory</h4>
-          <p>Memorize the position of each color and find its partner</p>
-          <a href="/memory">Play Now</a>
-        </div>
-        <div class="game">
-          <img src="game3.png" alt="Game 3">
-          <h4>Hangman</h4>
-          <p>Fill in the word before its too late!</p>
-          <a href="/hangman">Play Now</a>
-        </div>
-        <div class="game">
-          <img src="game4.png" alt="Game 4">
-          <h4>Snake</h4>
-          <p>Feed the snake as many apples as you can</p>
-          <a href="/snake">Play Now</a>
-        </div>
-        <div class="game">
-          <img src="game5.png" alt="Game 5">
-          <h4>2048</h4>
-          <p>Try to reach 2048</p>
-          <a href="/2048">Play Now</a>
-        </div>
-      </div>
-      
-      <p1>Genre 2</p1>
-      <div class="game-row">
-        <div class="game">
-          <img src="game4.png" alt="Game 4">
-          <h4>Tic Tac Toe</h4>
-          <p>Compete against friends to get 3 in a row</p>
-          <a href="/tic_tac_toe">Play Now</a>
-        </div>
-        <div class="game">
-          <img src="game5.png" alt="Game 5">
-          <h4>Rock Paper Scissors</h4>
-          <p>Compete against friends to be the best</p>
-          <a href="/rps">Play Now</a>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    <p>&copy; 2023 My Cool Math Games. All rights reserved.</p>
-  </footer>
+        
+    </section>
+    <footer class="main-footer">
+        <p>&copy; 2023 My Cool Math Games. All rights reserved.</p>
+      </footer>
 </body>
+
+
 </html>

@@ -2,6 +2,7 @@
 .results-table {
     border-collapse: collapse;
     width: 100%;
+    color:white;
 }
 
 .results-table th, .results-table td {
@@ -17,15 +18,19 @@
 /* Update the score section */
 .score {
     margin-top: 20px;
+    color:white;
 }
 
 .score p {
     margin: 5px 0;
+    color:white;
 }
 
 /* Additional styling */
 h1 {
     text-align: center;
+    color:white;
+
 }
 
 .result {

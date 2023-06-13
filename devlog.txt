@@ -135,3 +135,11 @@ YushaA -- 2023-06-12 20:06
 ==============================================================
 
 
+JeffZ -- 2023-06-12 21:30
+--------------------------------------------------------------
+- Finished website templates and designs
+- Rerouted all games to new front end framework
+- Added styling via CSS
+- Added flappy bird
+- Fix minor styling issues and bugs
+==============================================================

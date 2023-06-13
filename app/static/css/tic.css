@@ -9,20 +9,21 @@
 }
 
 body{
-    font-size: 35px;
+    font-size: 25px;
 }
 
 .container{
+ 
     padding: 40px;
-    height: 100vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: gray;
 }
 
 #board{
+    
     width: 450px;
     display: flex;
     flex-wrap: wrap;
@@ -30,6 +31,7 @@ body{
 }
 
 .box{
+   
     height: 150px;
     width: 150px;
     display: flex;
@@ -40,6 +42,8 @@ body{
     border-bottom: 2px solid;
     border-top: 2px solid;
     border-left: 2px solid;
+    border: 2px solid white;
+    color: white;
 }
 
 button{

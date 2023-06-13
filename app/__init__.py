@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, redirect, url_for
+from flask import Flask, render_template, request, session, redirect, url_for 
 import random
 
 app = Flask(__name__)
@@ -6,6 +6,10 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return render_template('index.html')
+
+@app.route('/games')
+def games():
+    return render_template('games.html')
 
 @app.route('/brick_break')
 def brick_break():
@@ -54,7 +58,7 @@ def initialize_session():
     session['word'] = get_random_word()
     session['chances'] = 6
 
-@app.route('/hangman')
+@app.route('/hangman', methods=['GET', 'POST'])
 def hangman():
     if 'word' not in session:
         initialize_session()
@@ -130,6 +134,11 @@ def get_winner(player_choice, computer_choice):
 @app.route('/2048')
 def S2048():
     return render_template('2048.html')
+
+@app.route('/flappy_bird')
+def flappy_bird():
+    return render_template('flappy_bird.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)

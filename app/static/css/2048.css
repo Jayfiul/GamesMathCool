@@ -1,9 +1,7 @@
 body {
     text-align: center;
-}
+    position: relative;
 
-hr {
-    width: 500px;
 }
 
 #board {
@@ -30,6 +28,10 @@ hr {
     align-items: center;
 }
 
+.hero .main-width h1 h2{
+    color:white;
+
+}
 
 /* color of each different tiles */
 
